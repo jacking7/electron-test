@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
   <head>
@@ -34,3 +35,40 @@
   </p>
 
 </html>
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>electron TEST</title>
+      <style>
+        *{ padding:0px; margin:0px; }
+        #contentWrapper { position: relative; }
+        #content { position: fixed; top: 0; left: 0; right: 0; bottom: 0; }
+      </style>
+
+  </head>
+  <body>
+    <div master id="contentWrapper">
+      <webview ng-style="style" id="content" src="http://www.tutorialbook.co.kr" autosize="on" allowpopups></webview>
+    </div>
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+
+  <p><script>
+    // 개발자 모드 ON
+    onload = () => {
+       const webview = document.getElementById('content')
+       webview.addEventListener("dom-ready", function(){
+       webview.openDevTools();
+      });
+    }
+  </script>
+  </p>
+
+</html>
+>>>>>>> origin/master
